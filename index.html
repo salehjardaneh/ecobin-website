@@ -20,11 +20,11 @@
             scroll-behavior: smooth;
         }
         
-        .leaf-animation {
+        .recycle-animation {
             position: absolute;
             width: 30px;
             height: 30px;
-            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23005A3C"><path d="M17 8C8 10 5.9 16.8 3 22c11.7-3.1 15.1-2.9 20-6-1.9-3.9-3.6-6.9-6-8zM12 12c0-1.1.9-2 2-2s2 .9 2 2-.9 2-2 2-2-.9-2-2z"/></svg>');
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23005A3C"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-.82 3h1.64l.96 1.66L12.82 9h-1.64L10.22 6.66 11.18 5zM12 13c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm4.78-3l-.96 1.66 1.64 2.34h1.64l.96-1.66L16.78 10zM7.22 10L5.58 8.34 4.62 10h1.64l.96 1.66L7.22 10z"/></svg>');
             background-size: contain;
             background-repeat: no-repeat;
             opacity: 0.7;
@@ -177,10 +177,11 @@
             box-shadow: 0 0 0 2px rgba(0, 90, 60, 0.3);
         }
     </style>
+
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body class="bg-white text-gray-800">
-    <!-- Floating leaves animation -->
-    <div id="leaves-container" class="fixed inset-0 overflow-hidden pointer-events-none z-0"></div>
+    
     
     <!-- Header -->
     <header class="bg-[#005A3C] text-white sticky top-0 z-50 shadow-md">
@@ -198,6 +199,7 @@
                 <a href="#benefits" class="nav-link">Benefits</a>
                 <a href="#market-fit" class="nav-link">Market Fit</a>
                 <a href="#team" class="nav-link">Our Team</a>
+                <a href="#user-manual" class="nav-link">User Manual</a>
                 <a href="#contact" class="nav-link">Contact</a>
             </nav>
             
@@ -214,6 +216,7 @@
                 <a href="#benefits" class="block py-2">Benefits</a>
                 <a href="#market-fit" class="block py-2">Market Fit</a>
                 <a href="#team" class="block py-2">Our Team</a>
+                <a href="#user-manual" class="block py-2">User Manual</a>
                 <a href="#contact" class="block py-2">Contact</a>
             </div>
         </div>
@@ -222,7 +225,7 @@
     <!-- Hero Section -->
     <section id="home" class="relative bg-gradient-to-r from-[#005A3C] to-[#008060] text-white py-20">
         <div class="container mx-auto px-4 flex flex-col md:flex-row items-center">
-            <div class="md:w-1/2 mb-10 md:mb-0">
+            <div class="md:w-1/2 mb-10 md:mb-0" data-aos="fade-right" data-aos-delay="200">
                 <h1 class="text-4xl md:text-5xl font-bold mb-4">Smart Sorting for a Sustainable Future</h1>
                 <p class="text-xl mb-8">EcoBin uses AI, IoT, and solar energy to revolutionize waste management.</p>
                 <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
@@ -230,9 +233,9 @@
                     <a href="#contact" class="bg-white text-[#005A3C] px-8 py-3 rounded-full text-center font-semibold">Get In Touch</a>
                 </div>
             </div>
-            <div class="md:w-1/2 relative">
+            <div class="md:w-1/2 relative" data-aos="fade-left" data-aos-delay="400">
                 <div class="relative">
-                    <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="EcoBin Smart Waste Sorting" class="rounded-xl shadow-2xl w-full h-auto">
+                    <img src="ecobin-hero.png.png" alt="EcoBin Smart Bin in Action" class="rounded-xl shadow-2xl w-full h-auto">
                     <div class="absolute -bottom-5 -right-5 bg-white p-4 rounded-full shadow-lg">
                         <div class="w-16 h-16 bg-[#005A3C] rounded-full flex items-center justify-center">
                             <i class="fas fa-brain text-white text-2xl"></i>
@@ -332,10 +335,10 @@
                     </div>
                     
                     <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
-                        <a href="#" class="bg-[#005A3C] text-white px-6 py-3 rounded-full text-center font-semibold flex items-center justify-center">
+                        <a href="UserM.pdf" download class="bg-[#005A3C] text-white px-6 py-3 rounded-full text-center font-semibold flex items-center justify-center">
                             <i class="fas fa-download mr-2"></i> Download Manual
                         </a>
-                        <a href="#" class="border border-[#005A3C] text-[#005A3C] px-6 py-3 rounded-full text-center font-semibold flex items-center justify-center">
+                        <a href="javascript:void(0);" onclick="alert('You can ask EcoBot for installation help anytime! 💬');" class="border border-[#005A3C] text-[#005A3C] px-6 py-3 rounded-full text-center font-semibold flex items-center justify-center">
                             <i class="fas fa-book mr-2"></i> Installation Guide
                         </a>
                     </div>
@@ -351,7 +354,7 @@
                                 <h3 class="text-xl font-bold mb-2">EcoBot Assistant</h3>
                                 <p class="text-center mb-4">Our AI-powered chatbot will be integrated here to answer all your questions about EcoBin.</p>
                                 <div class="bg-gray-200 rounded-full px-4 py-2 text-sm">
-                                    Coming Soon
+                                    EcoBot is live! Click the green button below to chat.
                                 </div>
                             </div>
                         </div>
@@ -557,38 +560,38 @@
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                 <div class="bg-white p-6 rounded-xl shadow-md text-center">
                     <div class="w-32 h-32 bg-gray-200 rounded-full mx-auto mb-4 overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" alt="Team Member" class="w-full h-full object-cover">
+                        <img src="Saleh.jpg" alt="Team Member" class="w-full h-full object-cover">
                     </div>
                     <h3 class="font-bold text-xl mb-1">Saleh Jardaneh</h3>
-                    <p class="text-[#005A3C] font-medium mb-3">Founder & CEO</p>
-                    <p class="text-gray-600 text-sm">Visionary leader with expertise in IoT and sustainable technologies.</p>
+                    <p class="text-[#005A3C] font-medium mb-3">Programmer</p>
+                    <p class="text-gray-600 text-sm">Writes the code and connects AI and IoT to control the bin's smart features.</p>
                 </div>
                 
                 <div class="bg-white p-6 rounded-xl shadow-md text-center">
                     <div class="w-32 h-32 bg-gray-200 rounded-full mx-auto mb-4 overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=688&q=80" alt="Team Member" class="w-full h-full object-cover">
+                        <img src="Yara.png" alt="Team Member" class="w-full h-full object-cover">
                     </div>
-                    <h3 class="font-bold text-xl mb-1">AI Engineer</h3>
-                    <p class="text-[#005A3C] font-medium mb-3">Machine Learning Specialist</p>
-                    <p class="text-gray-600 text-sm">Developed the CNN model powering our waste classification system.</p>
+                    <h3 class="font-bold text-xl mb-1">Yara Jaber</h3>
+                    <p class="text-[#005A3C] font-medium mb-3">Electrician</p>
+                    <p class="text-gray-600 text-sm">Designs and connects the electronic components to power and control the system.</p>
                 </div>
                 
                 <div class="bg-white p-6 rounded-xl shadow-md text-center">
                     <div class="w-32 h-32 bg-gray-200 rounded-full mx-auto mb-4 overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=761&q=80" alt="Team Member" class="w-full h-full object-cover">
+                        <img src="profile.jpg" alt="Team Member" class="w-full h-full object-cover">
                     </div>
-                    <h3 class="font-bold text-xl mb-1">Hardware Engineer</h3>
-                    <p class="text-[#005A3C] font-medium mb-3">Electronics Specialist</p>
-                    <p class="text-gray-600 text-sm">Designed the servo mechanism and solar power integration.</p>
+                    <h3 class="font-bold text-xl mb-1">Maher Khalifa</h3>
+                    <p class="text-[#005A3C] font-medium mb-3">Mechanic</p>
+                    <p class="text-gray-600 text-sm">Responsible for the structural design, materials selection, and physical mechanisms of the EcoBin.</p>
                 </div>
                 
                 <div class="bg-white p-6 rounded-xl shadow-md text-center">
                     <div class="w-32 h-32 bg-gray-200 rounded-full mx-auto mb-4 overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" alt="Team Member" class="w-full h-full object-cover">
+                        <img src="profile.jpg" alt="Team Member" class="w-full h-full object-cover">
                     </div>
-                    <h3 class="font-bold text-xl mb-1">Sustainability Expert</h3>
-                    <p class="text-[#005A3C] font-medium mb-3">Environmental Consultant</p>
-                    <p class="text-gray-600 text-sm">Ensures our solutions align with circular economy principles.</p>
+                    <h3 class="font-bold text-xl mb-1">Maya Balawi</h3>
+                    <p class="text-[#005A3C] font-medium mb-3">Designer</p>
+                    <p class="text-gray-600 text-sm">Develops engineering drawings, 3D models, and supports manufacturing documentation.</p>
                 </div>
             </div>
             
@@ -604,7 +607,70 @@
         </div>
     </section>
 
-    <!-- Contact Section -->
+    
+
+<!-- User Manual Section -->
+<section id="user-manual" class="py-20 bg-gray-50">
+  <div class="container mx-auto px-4">
+    <h2 class="text-3xl font-bold text-center mb-4 section-title" data-aos="fade-up">EcoBin User Manual</h2>
+    <p class="text-center text-gray-600 max-w-2xl mx-auto mb-12" data-aos="fade-up" data-aos-delay="100">
+      Learn how to use, maintain, and troubleshoot EcoBin — your AI-powered smart waste sorting solution.
+    </p>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+      <div data-aos="fade-right">
+        <h3 class="text-xl font-semibold text-[#005A3C] mb-4">1. Getting Started</h3>
+        <ul class="list-disc list-inside text-gray-700 space-y-2">
+          <li>Place EcoBin in a well-lit area for optimal solar charging.</li>
+          <li>Ensure the internal compartments are clean and empty.</li>
+          <li>Turn on the main power switch located under the lid.</li>
+        </ul>
+      </div>
+      <div data-aos="fade-left">
+        <h3 class="text-xl font-semibold text-[#005A3C] mb-4">2. How to Use EcoBin</h3>
+        <ul class="list-disc list-inside text-gray-700 space-y-2">
+          <li>Tap the “Scan” button on the front panel to activate the system.</li>
+          <li>Place the waste item under the camera and wait for scanning.</li>
+          <li>EcoBin will classify the item (paper, plastic, or can) and sort it automatically.</li>
+          <li>LED glows green for success, red for an error.</li>
+        </ul>
+      </div>
+      <div data-aos="fade-right">
+        <h3 class="text-xl font-semibold text-[#005A3C] mb-4">3. Power & Solar System</h3>
+        <ul class="list-disc list-inside text-gray-700 space-y-2">
+          <li>EcoBin charges through a built-in photovoltaic panel.</li>
+          <li>A lithium-ion battery ensures continuous operation in low-light.</li>
+          <li>The system enters low-power sleep mode when inactive.</li>
+        </ul>
+      </div>
+      <div data-aos="fade-left">
+        <h3 class="text-xl font-semibold text-[#005A3C] mb-4">4. Maintenance & Cleaning</h3>
+        <ul class="list-disc list-inside text-gray-700 space-y-2">
+          <li>Wipe the external surfaces weekly with a damp cloth.</li>
+          <li>Inspect the camera and LED indicators for dust or debris.</li>
+          <li>Modular parts can be replaced using the rear access panel.</li>
+        </ul>
+      </div>
+      <div data-aos="fade-up">
+        <h3 class="text-xl font-semibold text-[#005A3C] mb-4">5. IoT & Connectivity</h3>
+        <ul class="list-disc list-inside text-gray-700 space-y-2">
+          <li>EcoBin uses IoT to send full-bin alerts to the admin system.</li>
+          <li>Use the n8n automation platform to track bin status remotely.</li>
+          <li>All data is securely transmitted without identifying user info.</li>
+        </ul>
+      </div>
+      <div data-aos="fade-up">
+        <h3 class="text-xl font-semibold text-[#005A3C] mb-4">6. Safety & Support</h3>
+        <ul class="list-disc list-inside text-gray-700 space-y-2">
+          <li>Rounded edges and weatherproof housing ensure public safety.</li>
+          <li>No exposed wiring; child-safe design.</li>
+          <li>Need help? Use EcoBot (bottom right) or email us directly.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact Section -->
     <section id="contact" class="py-20 bg-white">
         <div class="container mx-auto px-4">
             <h2 class="text-3xl font-bold text-center mb-4 section-title">Contact Us</h2>
@@ -774,101 +840,185 @@
         });
         
         // Create falling leaves
-        function createLeaves() {
-            const container = document.getElementById('leaves-container');
-            const leafCount = 15;
-            
-            for (let i = 0; i < leafCount; i++) {
-                const leaf = document.createElement('div');
-                leaf.classList.add('leaf-animation');
-                
-                // Random position and animation delay
-                const randomX = Math.random();
-                const randomDelay = Math.random() * 15;
-                const randomDuration = 10 + Math.random() * 20;
-                
-                leaf.style.setProperty('--random-x', randomX);
-                leaf.style.left = `${randomX * 100}%`;
-                leaf.style.animationDelay = `${randomDelay}s`;
-                leaf.style.animationDuration = `${randomDuration}s`;
-                
-                // Random size
-                const size = 20 + Math.random() * 20;
-                leaf.style.width = `${size}px`;
-                leaf.style.height = `${size}px`;
-                
-                container.appendChild(leaf);
-            }
-        }
-        
-        // Create solar rays
-        function createSolarRays() {
-            const container = document.getElementById('solar-rays');
-            const rayCount = 12;
-            
-            for (let i = 0; i < rayCount; i++) {
-                const ray = document.createElement('div');
-                ray.classList.add('solar-ray');
-                
-                // Position around a circle
-                const angle = (i / rayCount) * 2 * Math.PI;
-                const radius = 100;
-                const centerX = 50;
-                const centerY = 50;
-                
-                const x = centerX + radius * Math.cos(angle);
-                const y = centerY + radius * Math.sin(angle);
-                
-                ray.style.left = `${x}%`;
-                ray.style.top = `${y}%`;
-                ray.style.transform = `rotate(${angle}rad)`;
-                ray.style.animationDelay = `${Math.random() * 4}s`;
-                
-                container.appendChild(ray);
-            }
-        }
-        
-        // Initialize animations
-        window.addEventListener('DOMContentLoaded', function() {
-            createLeaves();
-            createSolarRays();
-            
-            // Smooth scroll for anchor links
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    
-                    const targetId = this.getAttribute('href');
-                    const targetElement = document.querySelector(targetId);
-                    
-                    if (targetElement) {
-                        window.scrollTo({
-                            top: targetElement.offsetTop - 80,
-                            behavior: 'smooth'
-                        });
-                        
-                        // Close mobile menu if open
-                        const mobileMenu = document.getElementById('mobile-menu');
-                        if (!mobileMenu.classList.contains('hidden')) {
-                            mobileMenu.classList.add('hidden');
-                        }
-                    }
-                });
-            });
-            
-            // Form submission
-            const contactForm = document.querySelector('.contact-form');
-            if (contactForm) {
-                contactForm.addEventListener('submit', function(e) {
-                    e.preventDefault();
-                    
-                    // Here you would normally send the form data to your server
-                    alert('Thank you for your message! We will get back to you soon.');
-                    this.reset();
-                });
-            }
-        });
-    </script>
+          function appendMessage(content, isUser = false) {
+    const msgDiv = document.createElement('div');
+    msgDiv.className = `p-3 rounded-lg ${isUser ? 'bg-[#005A3C] text-white self-end' : 'bg-gray-100 text-gray-800'} max-w-[80%]`;
+    msgDiv.textContent = content;
+    document.getElementById('chat-window').appendChild(msgDiv);
+    document.getElementById('chat-window').scrollTop = document.getElementById('chat-window').scrollHeight;
+  }
+
+  function sendMessage() {
+    const input = document.getElementById('user-input');
+    const message = input.value.trim();
+    if (!message) return;
+
+    appendMessage(message, true);
+    input.value = '';
+    appendMessage('EcoBot is typing...');
+
+    fetch(endpoint, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${apiKey}`
+      },
+      body: JSON.stringify({
+        model: 'deepseek-chat',
+        messages: [
+          { role: 'system', content: systemPrompt },
+          { role: 'user', content: message }
+        ]
+      })
+    })
+    .then(res => res.json())
+    .then(data => {
+      const reply = data.choices?.[0]?.message?.content || 'No response.';
+      document.querySelector('#chat-window .bg-gray-100:last-child').remove();
+      appendMessage(reply);
+    })
+    .catch(err => {
+      document.querySelector('#chat-window .bg-gray-100:last-child').remove();
+      appendMessage('⚠️ Oops! Something went wrong.');
+      console.error(err);
+    });
+  }
+</script>
+<!-- 🌿 EcoBot Chatbot Widget with Manual & Report Context -->
+<div id="ecobot-launcher" class="fixed bottom-6 right-6 z-50">
+  <button onclick="toggleChatbot()" class="bg-[#005A3C] hover:bg-[#008060] text-white px-5 py-3 rounded-full shadow-lg">
+    💬 Ask EcoBot
+  </button>
+</div>
+
+<div id="ecobot-chat" class="fixed bottom-20 right-6 w-full max-w-sm bg-white rounded-xl shadow-lg border border-gray-200 overflow-hidden hidden flex flex-col" style="height: 500px;">
+  <div class="bg-[#005A3C] text-white px-4 py-3 font-semibold">EcoBot Assistant</div>
+  <div id="chat-window" class="flex-1 p-4 overflow-y-auto space-y-3 text-sm"></div>
+  <div class="border-t px-4 py-2">
+    <input id="user-input" type="text" placeholder="Ask how to use EcoBin..." class="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-[#005A3C]" onkeydown="if(event.key==='Enter'){sendMessage()}"/>
+  </div>
+</div>
+
+<script>
+  const apiKey = 'sk-cbf4d2ced89b480b99116c1b1a58b992';
+  const endpoint = 'https://api.deepseek.com/v1/chat/completions';
+
+  const systemPrompt = `You are EcoBot, the virtual assistant for EcoBin — an AI-powered smart waste bin. Answer user questions based on the following knowledge base:
+
+USER MANUAL (DETAILED):
+EcoBin is a smart, AI-powered waste-sorting bin that automatically detects and sorts waste into three categories: paper, plastic, and cans.
+
+1. **How to Use EcoBin**
+- Tap the button on the bin.
+- The lid opens and the internal camera scans the waste item.
+- AI analyzes the object using a CNN image classifier.
+- The base rotates to the correct bin compartment.
+- The waste is dropped automatically.
+- A green LED confirms success.
+
+2. **Power System**
+- EcoBin uses photovoltaic solar panels to charge a lithium-ion battery.
+- The system enters sleep mode to conserve energy when idle.
+- It’s optimized for outdoor and indoor use.
+
+3. **Connectivity (IoT)**
+- The bin includes sensors that detect fill level.
+- IoT module sends alerts via an automation system (e.g., n8n) when full.
+- Administrators can monitor usage remotely.
+
+4. **Maintenance**
+- Parts are modular and replaceable.
+- Made of weatherproof, UV-resistant plastic.
+- Periodic cleaning and battery check recommended.
+
+5. **Feedback and Safety**
+- LED lights (green = correct, red = error).
+- Reinforced edges, no exposed wiring.
+- Operates silently and efficiently.
+
+PROJECT SNAPSHOT:
+- Built by HTU students with support from local suppliers.
+- Built to meet ISO 14001 (environment), ISO 50001 (energy), ISO/IEC 23894 (AI risk).
+- Cost: ~270 JOD. Compared to $3000 competitors.
+- Target areas: campuses, parks, events, municipalities.
+
+FUNCTIONALITY:
+Answer FAQs, explain setup and usage, assist with maintenance and error resolution, and educate users on EcoBin’s environmental impact.`;
+
+  function toggleChatbot() {
+    const chatbot = document.getElementById('ecobot-chat');
+    chatbot.classList.toggle('hidden');
+  }
+
+  function appendMessage(content, isUser = false) {
+    const msgDiv = document.createElement('div');
+    msgDiv.className = `p-3 rounded-lg ${isUser ? 'bg-[#005A3C] text-white self-end' : 'bg-gray-100 text-gray-800'} max-w-[80%]`;
+    msgDiv.textContent = content;
+    document.getElementById('chat-window').appendChild(msgDiv);
+    document.getElementById('chat-window').scrollTop = document.getElementById('chat-window').scrollHeight;
+  }
+
+  function sendMessage() {
+    const input = document.getElementById('user-input');
+    const message = input.value.trim();
+    if (!message) return;
+
+    appendMessage(message, true);
+    input.value = '';
+    appendMessage('EcoBot is typing...');
+
+    fetch(endpoint, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${apiKey}`
+      },
+      body: JSON.stringify({
+        model: 'deepseek-chat',
+        messages: [
+          { role: 'system', content: systemPrompt },
+          { role: 'user', content: message }
+        ]
+      })
+    })
+    .then(res => res.json())
+    .then(data => {
+      const reply = data.choices?.[0]?.message?.content || 'No response.';
+      document.querySelector('#chat-window .bg-gray-100:last-child').remove();
+      appendMessage(reply);
+    })
+    .catch(err => {
+      document.querySelector('#chat-window .bg-gray-100:last-child').remove();
+      appendMessage('⚠️ Oops! Something went wrong.');
+      console.error(err);
+    });
+  }
+</script>
+</html>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 1000,
+      once: true
+    });
+  </script>
+<!-- EcoBot Onboarding Popup -->
+<div id="ecobot-popup" class="fixed bottom-32 right-6 bg-white border border-gray-300 shadow-lg rounded-xl px-4 py-3 z-50 animate-bounce">
+  <div class="flex items-start space-x-2">
+    <div class="text-2xl">👋</div>
+    <div>
+      <p class="text-sm text-gray-800 font-medium mb-1">Need help?</p>
+      <p class="text-xs text-gray-600">Click the green button to ask EcoBot about EcoBin or the user manual.</p>
+    </div>
+  </div>
+</div>
+<script>
+  // Auto-hide popup after 8 seconds
+  setTimeout(() => {
+    const popup = document.getElementById('ecobot-popup');
+    if (popup) popup.remove();
+  }, 8000);
+</script>
 </body>
 <!-- 🌿 EcoBot Chatbot Widget with Manual & Report Context -->
 <div id="ecobot-launcher" class="fixed bottom-6 right-6 z-50">
